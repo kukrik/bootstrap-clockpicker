@@ -18,6 +18,9 @@ class ExamplesForm extends Form
 
     protected function formCreate()
     {
+        $this->label = new Bs\Label($this);
+        $this->label->setCssStyle('display', 'inline;');
+        
         $this->clockpicker = new Q\Plugin\ClockPicker($this);
         $this->clockpicker->ActionParameter = $this->clockpicker->ControlId;
         $this->clockpicker->addAction(new Change(), new Ajax('setTime'));
@@ -25,8 +28,10 @@ class ExamplesForm extends Form
 
     protected function setTime(ActionParams $params)
     {
-        $objControlToLookup = $this->getControl($params->ActionParameter);
-        $this->label1->Text = $objControlToLookup->Text;
+         $objControlToLookup = $this->getControl($params->ActionParameter);
+        $dttDateTime = $objControlToLookup->DateTime;
+        
+        $this->label->Text = $dttDateTime->qFormat('hhhh:mm:ss');
     }
 
 
