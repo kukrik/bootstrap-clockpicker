@@ -12,10 +12,9 @@ use QCubed\Project\Application;
 
 class ExamplesForm extends Form
 {
-    protected $clockpicker;
-
     protected $label1;
-
+    protected $clockpicker;
+    
     protected function formCreate()
     {
         $this->label = new Bs\Label($this);
@@ -33,8 +32,5 @@ class ExamplesForm extends Form
         
         $this->label->Text = $dttDateTime->qFormat('hhhh:mm:ss');
     }
-
-
-
 }
 ExamplesForm::Run('ExamplesForm');
