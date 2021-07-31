@@ -42,10 +42,22 @@ class ExamplesForm extends Form
 
         $this->clockpicker2->addAction(new Change(), new Ajax('setTime_2'));
         $this->clockpicker2->ActionParameter = $this->clockpicker2->ControlId;
+    protected $label1;
+    protected $clockpicker;
+    
+    protected function formCreate()
+    {
+        $this->label = new Bs\Label($this);
+        $this->label->setCssStyle('display', 'inline;');
+        
+        $this->clockpicker = new Q\Plugin\ClockPicker($this);
+        $this->clockpicker->ActionParameter = $this->clockpicker->ControlId;
+        $this->clockpicker->addAction(new Change(), new Ajax('setTime'));
     }
 
     protected function setTime_1(ActionParams $params)
     {
+<<<<<<< HEAD
         $objControlToLookup = $this->getControl($params->ActionParameter);
         $dttDateTime = $objControlToLookup->DateTime;
 
@@ -58,6 +70,12 @@ class ExamplesForm extends Form
         $dttDateTime = $objControlToLookup->DateTime;
 
         $this->label2->Text = 'Time: ' . $dttDateTime->qFormat('hhhh:mm:ss');
+=======
+         $objControlToLookup = $this->getControl($params->ActionParameter);
+        $dttDateTime = $objControlToLookup->DateTime;
+        
+        $this->label->Text = $dttDateTime->qFormat('hhhh:mm:ss');
+>>>>>>> 5de2f9d61b98528f0f4f444e56cdcfb1baee00f3
     }
 }
 ExamplesForm::Run('ExamplesForm');
