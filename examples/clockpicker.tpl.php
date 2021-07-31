@@ -21,10 +21,19 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">Time Picking</label>
             <div class="col-sm-3">
-                <?= _r($this->clockpicker); ?>
+                <?= _r($this->clockpicker1); ?>
             </div>
             <p style="padding-top: 6px; display: inline-block;">Output the database through the QDateTime class in the time format: <?= _r($this->label1); ?></p>
         </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Time Picking</label>
+            <div class="col-sm-3">
+                <?= _r($this->clockpicker2); ?>
+            </div>
+            <p style="padding-top: 6px; display: inline-block;">Output the database through the QDateTime class in the time format: <?= _r($this->label2); ?></p>
+        </div>
+
     </div>
 
 <?php $this->RenderEnd(); ?>

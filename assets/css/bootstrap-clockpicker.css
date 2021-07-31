@@ -4,6 +4,10 @@
  * Licensed under MIT (https://github.com/weareoutman/clockpicker/blob/gh-pages/LICENSE)
  */
 
+.popover {
+    padding: 0 !important;
+}
+
 .clockpicker .input-group-addon {
 	cursor: pointer;
 }
@@ -88,9 +92,9 @@
 .clockpicker-button {
 	background-image: none;
 	background-color: #fff;
-	border-width: 1px 0 0;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+    border-color: transparent !important;
 	margin: 0;
 	padding: 10px 0;
 }
@@ -165,4 +169,8 @@
 	padding: 5px;
 	border: 1px solid rgba(0, 0, 0, .2);
 	border-radius: 4px;
+}
+
+.clockpicker-span-am-pm {
+	margin-left: 5px;
 }

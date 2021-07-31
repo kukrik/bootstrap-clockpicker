@@ -22,6 +22,8 @@ class ClockPickerBase extends ClockPickerBaseGen
 
     protected $strLabelForInvalid = 'Invalid Time';
 
+    protected $strText;
+
     /**
      * @param $strText
      * @return null|QDateTime

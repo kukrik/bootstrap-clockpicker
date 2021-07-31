@@ -27,6 +27,7 @@ use QCubed\Type;
  * @property boolean $AutoClose Default: false (auto close when minute is selected)
  * @property boolean $Vibrate Default: true (vibrate the device when dragging clock hand)
  * @property string $FromNow Default: 0 Set default time to * milliseconds from now (using with default = 'now')
+ * @property boolean $TwelveHour Default: false Enables twelve hour mode with AM & PM buttons
  *
  * @see http://weareoutman.github.io/clockpicker/ or https://github.com/weareoutman/clockpicker
  * @package QCubed\Plugin
@@ -48,6 +49,8 @@ class ClockPickerBaseGen extends Bs\TextBox
     protected $blnVibrate = null;
     /** @var string */
     protected $strFromNow = null;
+    /** @var boolean */
+    protected $blnTwelveHour = null;
 
     protected function makeJqOptions()
     {
@@ -59,6 +62,7 @@ class ClockPickerBaseGen extends Bs\TextBox
         if (!is_null($val = $this->AutoClose)) {$jqOptions['autoclose'] = $val;}
         if (!is_null($val = $this->Vibrate)) {$jqOptions['vibrate'] = $val;}
         if (!is_null($val = $this->FromNow)) {$jqOptions['fromnow'] = $val;}
+        if (!is_null($val = $this->TwelveHour)) {$jqOptions['twelvehour'] = $val;}
         return $jqOptions;
     }
 
@@ -97,16 +101,6 @@ class ClockPickerBaseGen extends Bs\TextBox
         Application::executeControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "remove", Application::PRIORITY_LOW);
     }
 
-    /**
-     * Toggle to hours or minutes view
-     *
-     * This method does not accept any arguments.
-     */
-    public function toggleView()
-    {
-        Application::executeControlCommand($this->getJqControlId(), $this->getJqSetupFunction(), "toggleView", Application::PRIORITY_LOW);
-    }
-
     public function __get($strName)
     {
         switch ($strName) {
@@ -117,6 +111,7 @@ class ClockPickerBaseGen extends Bs\TextBox
             case 'AutoClose': return $this->blnAutoClose;
             case 'Vibrate': return $this->blnVibrate;
             case 'FromNow': return $this->strFromNow;
+            case 'TwelveHour': return $this->blnTwelveHour;
 
             default:
                 try {
@@ -201,15 +196,16 @@ class ClockPickerBaseGen extends Bs\TextBox
                     throw $objExc;
                 }
 
-//            case 'ClearBtn':
-//                try {
-//                    $this->blnClearBtn = Type::Cast($mixValue, Type::BOOLEAN);
-//                    $this->addAttributeScript($this->getJqSetupFunction(), 'option', 'clearBtn', $this->blnClearBtn);
-//                    break;
-//                } catch (InvalidCast $objExc) {
-//                    $objExc->incrementOffset();
-//                    throw $objExc;
-//                }
+            case 'TwelveHour':
+                try {
+                    $this->blnTwelveHour = Type::Cast($mixValue, Type::BOOLEAN);
+                    $this->addAttributeScript($this->getJqSetupFunction(), 'option', 'twelvehour', $this->blnTwelveHour);
+                    break;
+                } catch (InvalidCast $objExc) {
+                    $objExc->incrementOffset();
+                    throw $objExc;
+                }
+
 
             default:
                 try {
