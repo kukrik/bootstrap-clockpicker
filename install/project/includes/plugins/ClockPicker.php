@@ -15,7 +15,7 @@ use QCubed\Project\Application;
 
 
 /**
- * DateTimePickerBase constructor
+ * ClockPickerBase constructor
  *
  * @param ControlBase|FormBase|null $objParentObject
  * @param null|string $strControlId
@@ -34,8 +34,8 @@ class ClockPicker extends ClockPickerBase
 	 */
 
 	protected function registerFiles() {
-		$this->AddJavascriptFile(QCUBED_CLOCKPICKER_ASSETS_URL . "/js/bootstrap-clockpicker.js");
-		$this->addCssFile(QCUBED_CLOCKPICKER_ASSETS_URL . "/css/bootstrap-clockpicker.css");
+		$this->AddJavascriptFile(QCUBED_CLOCKPICKER_ASSETS_URL . "/js/bootstrap-clockpicker.min.js");
+		$this->addCssFile(QCUBED_CLOCKPICKER_ASSETS_URL . "/css/bootstrap-clockpicker.min.css");
 		$this->AddCssFile(QCUBED_BOOTSTRAP_CSS); // make sure they know
 		$this->AddCssFile(QCUBED_FONT_AWESOME_CSS); // make sure they know
 	}

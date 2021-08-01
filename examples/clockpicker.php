@@ -26,12 +26,10 @@ class ExamplesForm extends Form
         $this->label2 = new Bs\Label($this);
         $this->label2->setCssStyle('display', 'inline;');
 
-
         $this->clockpicker1 = new Q\Plugin\ClockPicker($this);
         $this->clockpicker1->AutoClose = true;
         $this->clockpicker1->Default = 'now';
         //$this->clockpicker1->Text = '17:35';
-
         $this->clockpicker1->addAction(new Change(), new Ajax('setTime_1'));
         $this->clockpicker1->ActionParameter = $this->clockpicker1->ControlId;
 
@@ -39,25 +37,12 @@ class ExamplesForm extends Form
         $this->clockpicker2->DoneText = t('Done');
         $this->clockpicker2->AutoClose = false;
         $this->clockpicker2->TwelveHour = true;
-
         $this->clockpicker2->addAction(new Change(), new Ajax('setTime_2'));
         $this->clockpicker2->ActionParameter = $this->clockpicker2->ControlId;
-    protected $label1;
-    protected $clockpicker;
-    
-    protected function formCreate()
-    {
-        $this->label = new Bs\Label($this);
-        $this->label->setCssStyle('display', 'inline;');
-        
-        $this->clockpicker = new Q\Plugin\ClockPicker($this);
-        $this->clockpicker->ActionParameter = $this->clockpicker->ControlId;
-        $this->clockpicker->addAction(new Change(), new Ajax('setTime'));
     }
 
     protected function setTime_1(ActionParams $params)
     {
-<<<<<<< HEAD
         $objControlToLookup = $this->getControl($params->ActionParameter);
         $dttDateTime = $objControlToLookup->DateTime;
 
@@ -70,12 +55,6 @@ class ExamplesForm extends Form
         $dttDateTime = $objControlToLookup->DateTime;
 
         $this->label2->Text = 'Time: ' . $dttDateTime->qFormat('hhhh:mm:ss');
-=======
-         $objControlToLookup = $this->getControl($params->ActionParameter);
-        $dttDateTime = $objControlToLookup->DateTime;
-        
-        $this->label->Text = $dttDateTime->qFormat('hhhh:mm:ss');
->>>>>>> 5de2f9d61b98528f0f4f444e56cdcfb1baee00f3
     }
 }
 ExamplesForm::Run('ExamplesForm');

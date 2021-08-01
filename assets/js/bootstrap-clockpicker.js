@@ -131,7 +131,7 @@
 			var amPmButtons = $(amPmButtonsTemplate);
 			//amPmButtons.appendTo(plate);
 			
-			////Not working b/c they are not shown when this runs
+			//Not working b/c they are not shown when this runs
 			//$('clockpicker-am-button')
 			//    .on("click", function() {
 			//        self.amOrPm = "AM";
@@ -147,21 +147,21 @@
 			$('<button type="button" class="btn btn-sm btn-default clockpicker-button am-button">' + "AM" + '</button>')
 				.on("click", function() {
 					self.amOrPm = "AM";
-					$('.clockpicker-span-am-pm').empty().append('AM');
+					$('.clockpicker-span-am-pm').empty().append(' AM');
 				}).appendTo(this.amPmBlock);
 				
 				
 			$('<button type="button" class="btn btn-sm btn-default clockpicker-button pm-button">' + "PM" + '</button>')
 				.on("click", function() {
 					self.amOrPm = 'PM';
-					$('.clockpicker-span-am-pm').empty().append('PM');
+					$('.clockpicker-span-am-pm').empty().append(' PM');
 				}).appendTo(this.amPmBlock);
 				
 		}
 		
 		if (! options.autoclose) {
 			// If autoclose is not setted, append a button
-			$('<button type="button" class="btn btn-sm btn-default btn-block clockpicker-button">' + options.donetext + '</button>')
+			$('<button type="button" class="btn btn-default btn-block clockpicker-button">' + options.donetext + '</button>')
 				.click($.proxy(this.done, this))
 				.appendTo(popover);
 		}
@@ -367,7 +367,7 @@
 		fromnow: 0,          // set default time to * milliseconds from now (using with default = 'now')
 		placement: 'bottom', // clock popover placement
 		align: 'left',       // popover arrow align
-		donetext: '完成',    // done button text
+		donetext: 'Done',    // done button text
 		autoclose: false,    // auto close when minute is selected
 		twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
 		vibrate: true        // vibrate the device when dragging clock hand
@@ -677,9 +677,9 @@
 		var last = this.input.prop('value'),
 			value = leadingZero(this.hours) + ':' + leadingZero(this.minutes);
 		if  (this.options.twelvehour) {
-			value = value + this.amOrPm;
+			value = value + ' ' + this.amOrPm;
 		}
-		
+
 		this.input.prop('value', value);
 		if (value !== last) {
 			this.input.triggerHandler('change');
@@ -691,7 +691,6 @@
 		if (this.options.autoclose) {
 			this.input.trigger('blur');
 		}
-
 		raiseCallback(this.options.afterDone);
 	};
 
