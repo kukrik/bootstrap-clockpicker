@@ -2,7 +2,7 @@
     "name": "kukrik/bootstrap-clockpicker",
     "description": "QCubed v4 plugin for Bootstrap ClockPicker",
     "type": "qcubed-library",
-    "keywords": ["qcubed", "bootstrap-clockpicker"],
+    "keywords": ["qcubed-4", "bootstrap-clockpicker"],
     "license": "MIT",
     "require": {
         "php": ">=7.0"
