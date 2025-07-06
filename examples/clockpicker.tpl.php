@@ -8,12 +8,12 @@
 
     <div class="instructions">
         <h1 class="instruction_title">Bootstrap ClockPicker some usage examples</h1>
-        <p>The ClockPicker plugin allows to you use the Clock Picker, which is a Bootstrap
+        <p>The ClockPicker plugin allows you to use the Clock Picker, which is a Bootstrap
             form component to handle time data, on your forms.</p>
 
-        <p>Home page for the lib is <a href="https://github.com/weareoutman/clockpicker">https://github.com/weareoutman/clockpicker</a>
-            and demo is at <a href="http://weareoutman.github.io/clockpicker/">http://weareoutman.github.io/clockpicker/</a>,
-            where you can see example of use.</p>
+        <p>The home page for the lib is <a href="https://github.com/weareoutman/clockpicker">https://github.com/weareoutman/clockpicker</a>
+            and demo is at <a href="https://weareoutman.github.io/clockpicker/">https://weareoutman.github.io/clockpicker/</a>,
+            where you can see an example of use.</p>
     </div>
 
     <div class="form-horizontal" style="padding-top: 25px;">

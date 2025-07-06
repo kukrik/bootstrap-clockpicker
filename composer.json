@@ -1,6 +1,6 @@
 {
     "name": "kukrik/bootstrap-clockpicker",
-    "description": "QCubed v4 plugin for Bootstrap ClockPicker",
+    "description": "QCubed-4 plugin for Bootstrap ClockPicker",
     "type": "qcubed-library",
     "keywords": ["qcubed-4", "bootstrap-clockpicker"],
     "license": "MIT",
