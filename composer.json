@@ -5,7 +5,7 @@
     "keywords": ["qcubed-4", "bootstrap-clockpicker"],
     "license": "MIT",
     "require": {
-        "php": ">=7.0"
+        "php": ">=8.30"
     },
     "autoload": {
       "psr-4": {"QCubed\\Plugin\\": "src/"}
