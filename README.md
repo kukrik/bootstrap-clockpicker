@@ -8,6 +8,8 @@ The ClockPicker plugin allows to you use the Clock Picker, which is a Bootstrap 
 Home page for the lib is https://github.com/weareoutman/clockpicker and demo is at
 http://weareoutman.github.io/clockpicker/, where you can see example of use.
 
+This plugin works starting from PHP version 8.3+.
+
 ![Image of kukrik](screenshot/clockpicker_screenshot_1.jpg?raw=true)
 
 ![Image of kukrik](screenshot/clockpicker_screenshot_2.jpg?raw=true)
